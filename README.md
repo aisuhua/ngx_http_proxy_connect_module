@@ -77,8 +77,8 @@ server {
     # defined by yourself for non-CONNECT requests
     # Example: reverse proxy for non-CONNECT requests
     location / {
-        proxy_pass http://$host;
-        proxy_set_header Host $host;
+        proxy_pass http://$host; # please use $http_host if your backend is not the default 80 port
+        proxy_set_header Host $host; # please use $http_host if your backend is not the default 80 port
     }
 }
 ```
